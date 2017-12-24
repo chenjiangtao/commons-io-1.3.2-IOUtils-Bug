@@ -2,7 +2,7 @@
 
 
 
-- result of file: ffb5c2aea04c4f208018eb81f891b6dc
+- result of file: mycat.jpg.b64
 ![](http://static.tuzhihao.com//1514115829.png?imageMogr2/thumbnail/!100p)
 
 - result of file: mystring
