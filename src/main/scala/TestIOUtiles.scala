@@ -1,4 +1,4 @@
-import java.io.{File, FileWriter}
+import java.io.{File, FileOutputStream}
 import java.nio.charset.StandardCharsets
 import java.nio.file.{Files, Paths}
 
@@ -41,7 +41,7 @@ object TestIOUtils extends App {
       pathData.mkdirs()
     }
     val fp = filePath + File.separator + fileName
-    IOUtils.write(value, new FileWriter(fp))
+    IOUtils.write(value, new FileOutputStream(fp))
     var tmp = fileReader(fp)
     printf("file[%.10s],length:%10d\n", source_file_b64, value.length)
     printf("file[%.10s],length:%10d\n", fp, tmp.length)
