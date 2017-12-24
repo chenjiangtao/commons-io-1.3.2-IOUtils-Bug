@@ -10,8 +10,8 @@ object TestIOUtils extends App {
   println("Hello, World!")
 
   val filePath = "dir"
-  val source_file_b64 = "dir/ffb5c2aea04c4f208018eb81f891b6dc"
-  //  val source_file_b64 = "dir/mystring"
+  val source_file_b64 = "dir/mycat.jpg.b64"
+//    val source_file_b64 = "dir/mystring"
 
   /**
     * file reader
