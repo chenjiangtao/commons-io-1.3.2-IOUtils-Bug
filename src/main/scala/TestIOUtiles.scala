@@ -29,7 +29,6 @@ object TestIOUtils extends App {
   }
 
   /**
-    * IOUtils test
     * write to data file
     *
     * @param value
@@ -41,17 +40,18 @@ object TestIOUtils extends App {
     if (!pathData.exists()) {
       pathData.mkdirs()
     }
-    IOUtils.write(value, new FileWriter(filePath + File.separator + fileName))
-    var tmp = fileReader(filePath + File.separator + fileName)
-    println("source file length :" + value.length)
-    println("save file length   :" + tmp.length)
+    val fp = filePath + File.separator + fileName
+    IOUtils.write(value, new FileWriter(fp))
+    var tmp = fileReader(fp)
+    printf("file[%.10s],length:%10d\n", source_file_b64, value.length)
+    printf("file[%.10s],length:%10d\n", fp, tmp.length)
     //    assert(tmp.length == value.length)
 
     value.length + ""
   }
 
   /**
-    * Files.write test
+    *
     * write to data file
     *
     * @param value
@@ -63,16 +63,19 @@ object TestIOUtils extends App {
     if (!pathData.exists()) {
       pathData.mkdirs()
     }
-    Files.write(Paths.get(filePath + File.separator + fileName), value.getBytes(StandardCharsets.UTF_8))
 
-    var tmp = fileReader(filePath + File.separator + fileName)
-    println("source file length :" + value.length)
-    println("save file length   :" + tmp.length)
+    val fp = filePath + File.separator + fileName
+    Files.write(Paths.get(fp), value.getBytes(StandardCharsets.UTF_8))
+    var tmp = fileReader(fp)
+
+    printf("file[%.10s],length:%10d\n", source_file_b64, value.length)
+    printf("file[%.10s],length:%10d\n", fp, tmp.length)
     //    assert(tmp.length == value.length)
   }
 
+  //   IOUtils test
   writeFile1(fileReader(source_file_b64), "")
-
+  //Files.write test
   writeFile(fileReader(source_file_b64), "")
 
 }
