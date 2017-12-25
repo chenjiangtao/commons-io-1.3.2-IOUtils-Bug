@@ -8,3 +8,7 @@ method: public static void write(String data, Writer output)
 - result of file: mystring
 ![](http://static.tuzhihao.com//1514115874.png?imageMogr2/thumbnail/!100p)
 
+## Fixed
+Change FileWriter to FileOutputStream
+
+Thanks [Bruno P. Kinoshita](https://github.com/kinow)
